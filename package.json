@@ -9,7 +9,6 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "babel-eslint": "^9.0.0",
     "eslint": "^5.6.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
@@ -18,5 +17,8 @@
     "expo": "^30.0.1",
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz"
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0"
   }
 }
