@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-
 import MemoList from '../components/MemoList';
 import CircleButton from '../elements/CircleButton';
 
@@ -8,8 +7,10 @@ class MemoListScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <MemoList />
-        <CircleButton>{'\uf067'}</CircleButton>
+        <MemoList navigation={this.props.navigation} />
+        <CircleButton onPress={() => { this.props.navigation.navigate('MemoEdit'); }}>
+          {'\uf067'}
+        </CircleButton>
       </View>
     );
   }
