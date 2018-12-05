@@ -6,6 +6,10 @@
     "import"
   ],
   "rules": {
+    "react/jsx-no-bind": 0,
+    "no-unused-vars": 0,
+    "import/newline-after-import": 0,
+    "object-curly-newline": 0,
     "key-spacing": 0,
     "react/prefer-stateless-function": 0,
     "react/jsx-filename-extension": 0,
