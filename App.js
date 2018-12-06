@@ -6,8 +6,12 @@ import MemoDetailScreen from './src/screens/MemoDetailScreen';
 import MemoEditScreen from './src/screens/MemoEditScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import SignupScreen from './src/screens/SignupScreen';
-
 import ENV from './env.json';
+
+
+// Required for side-effects
+require('firebase/firestore');
+
 
 const config = {
   apiKey:               ENV.FIREBASE_API_KEY,
@@ -17,7 +21,6 @@ const config = {
   storageBucket:        ENV.FIREBASE_STORAGE,
   messagingSenderId:    ENV.FIREBASE_SENDER,
 };
-
 firebase.initializeApp(config);
 
 const App = createStackNavigator({
