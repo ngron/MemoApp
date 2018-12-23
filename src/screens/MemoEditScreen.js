@@ -22,7 +22,7 @@ class MemoEditScreen extends React.Component {
     const { currentUser } = firebase.auth();
     const db = firebase.firestore();
     db.settings({ timestampsInSnapshots: true });
-    const newDate = new Date();
+    const newDate = firebase.firestore.Timestamp.fromDate(new Date());
     db.collection(`users/${currentUser.uid}/memos`).doc(this.state.key)
       .update({
         body: this.state.body,
