@@ -15,7 +15,7 @@ class MemoCreateScreen extends React.Component {
     db.settings({ timestampsInSnapshots: true });
     db.collection(`users/${currentUser.uid}/memos`).add({
       body: this.state.body,
-      createOn: '2018-12-19',
+      createdOn: '2018-12-19',
     })
       .then((docRef) => {
         console.log(docRef.id);
