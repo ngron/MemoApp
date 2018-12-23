@@ -16,26 +16,12 @@ class MemoListScreen extends React.Component {
     db.settings({ timestampsInSnapshots: true });
     db.collection(`users/${currentUser.uid}/memos`)
       .onSnapshot((snapshot) => {
-        console.log(snapshot);
         const memoList = [];
         snapshot.forEach((doc) => {
           memoList.push({ ...doc.data(), key: doc.id });
         });
         this.setState({ memoList });
       });
-    /*
-      .get()
-      .then((snapshot) => {
-        const memoList = [];
-        snapshot.forEach((doc) => {
-          memoList.push({ ...doc.data(), key: doc.id });
-        });
-        this.setState({ memoList });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-      */
   }
 
   handlePress() {

@@ -4,7 +4,6 @@ import { StyleSheet, View, Text } from 'react-native';
 import CircleButton from '../elements/CircleButton';
 
 const dateString = (date) => {
-  console.log(date);
   const str = date.toDate().toISOString();
   return str.split('T')[0];
 };
