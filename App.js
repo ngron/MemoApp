@@ -1,6 +1,7 @@
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 
 import firebase from 'firebase';
+import { Platform } from 'react-native';
 import MemoListScreen from './src/screens/MemoListScreen';
 import MemoDetailScreen from './src/screens/MemoDetailScreen';
 import MemoEditScreen from './src/screens/MemoEditScreen';
@@ -12,7 +13,6 @@ import ENV from './env.json';
 
 // Required for side-effects
 require('firebase/firestore');
-
 
 const config = {
   apiKey:               ENV.FIREBASE_API_KEY,
@@ -37,7 +37,17 @@ const App = createStackNavigator({
     headerTintColor: '#fff',
     headerBackTitle: null,
     headerStyle: {
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.2,
+      shadowRadius: 1,
       backgroundColor: '#265366',
+      ...Platform.select({
+        android: {
+          height: 80,
+          paddingTop: 20,
+        },
+      }),
     },
     headerTitleStyle: {
       color: '#fff',
